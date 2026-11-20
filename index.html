@@ -4,85 +4,254 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CHAT-SRIA | Digital Innovation</title>
+<meta name="theme-color" content="#090d1b">
+<meta name="description" content="CHAT-SRIA creates websites, digital software and AI-powered tools.">
+<title>CHAT-SRIA | Digital Studio</title>
+
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
-body{font-family:Arial,sans-serif;background:#090d1b;color:white}
-header{padding:22px 7%;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #252b40}
-.logo{font-size:23px;font-weight:800;color:#a78bfa}
-nav a{color:#ddd;text-decoration:none;margin-left:17px;font-size:13px}
-.hero{text-align:center;padding:100px 20px 85px;background:radial-gradient(ellipse at top,#30205b,#090d1b 70%)}
+html{scroll-behavior:smooth}
+body{
+font-family:Arial,sans-serif;
+background:#090d1b;
+color:#fff;
+line-height:1.6
+}
+a{color:inherit;text-decoration:none}
+header{
+position:sticky;top:0;z-index:10;
+background:#090d1bee;
+backdrop-filter:blur(15px);
+border-bottom:1px solid #252b40;
+padding:17px 7%;
+display:flex;justify-content:space-between;
+align-items:center;flex-wrap:wrap;gap:15px
+}
+.logo{font-size:25px;font-weight:900;color:#a78bfa}
+nav{display:flex;gap:19px;flex-wrap:wrap}
+nav a{font-size:13px;color:#cbd0e0}
+nav a:hover{color:#a78bfa}
+.hero{
+text-align:center;padding:110px 20px 100px;
+background:radial-gradient(ellipse at top,#35215f,#090d1b 72%)
+}
 .tag{color:#c4b5fd;font-size:12px;letter-spacing:3px}
-h1{font-size:clamp(42px,9vw,76px);margin:25px 0 15px}
+h1{font-size:clamp(43px,8vw,78px);line-height:1.1;margin:25px 0}
 h1 span{color:#a78bfa}
-.hero p{color:#b8bfd2;line-height:1.7;max-width:530px;margin:auto}
-.btn{display:inline-block;margin-top:30px;padding:15px 25px;background:#8b5cf6;color:white;text-decoration:none;border-radius:9px;font-weight:bold}
-section{padding:65px 8%}
-h2{text-align:center;font-size:32px;margin-bottom:15px}
-.sub{text-align:center;color:#aab1c4;margin-bottom:35px}
-.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
-.card{background:#151b2d;border:1px solid #292f48;padding:27px;border-radius:14px}
-.card h3{margin-bottom:12px;color:#c4b5fd}
-.card p{color:#b6bed0;line-height:1.7;font-size:14px}
-.about{text-align:center;background:#101629}
-.about p{max-width:650px;margin:auto;color:#b6bed0;line-height:1.8}
+.hero p{max-width:620px;margin:auto;color:#bdc4d7}
+.btn{
+display:inline-block;margin:25px 8px 0 0;
+padding:13px 23px;border-radius:9px;
+background:#8b5cf6;color:white;font-weight:bold;
+transition:.2s
+}
+.btn:hover{background:#7041d8;transform:translateY(-2px)}
+.btn.secondary{background:#202941;border:1px solid #414b69}
+section{padding:75px 8%;scroll-margin-top:80px}
+h2{text-align:center;font-size:34px;margin-bottom:12px}
+.subtitle{text-align:center;color:#aab1c4;margin-bottom:38px}
+.cards{
+display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+gap:20px
+}
+.card{
+background:#151b2d;border:1px solid #292f48;
+padding:27px;border-radius:15px;
+transition:.2s
+}
+.card:hover{border-color:#8b5cf6;transform:translateY(-4px)}
+.card h3{color:#c4b5fd;margin-bottom:12px}
+.card p{color:#b6bed0;font-size:14px}
+.icon{font-size:29px;margin-bottom:14px}
+.about{background:#101629;text-align:center}
+.about p{max-width:720px;margin:auto;color:#b6bed0}
+.price{font-size:25px;font-weight:bold;margin:12px 0;color:#c4b5fd}
+.small{font-size:12px;color:#909bb4}
+.portfolio .card{min-height:175px}
 .contact{text-align:center}
-.contact p{color:#b6bed0;line-height:1.8}
-footer{text-align:center;padding:25px;color:#8790a8;border-top:1px solid #252b40;font-size:13px}
+.contact p{color:#b6bed0}
+.contact-box{
+max-width:600px;margin:30px auto 0;
+background:#151b2d;border:1px solid #343d59;
+padding:30px;border-radius:15px
+}
+.email{color:#c4b5fd;font-weight:bold;overflow-wrap:anywhere}
+footer{
+text-align:center;padding:30px;
+border-top:1px solid #252b40;color:#8790a8;font-size:13px
+}
+footer a{color:#c4b5fd}
+@media(max-width:600px){
+header{justify-content:center}
+nav{justify-content:center;gap:13px}
+nav a{font-size:12px}
+.hero{padding:75px 18px}
+section{padding:55px 6%}
+h2{font-size:28px}
+}
 </style>
 </head>
+
 <body>
+
 <header>
-<div class="logo">CHAT-SRIA.</div>
+<a class="logo" href="#home">CHAT-SRIA.</a>
 <nav>
 <a href="#home">Home</a>
 <a href="#services">Services</a>
+<a href="#products">Products</a>
+<a href="#portfolio">Portfolio</a>
 <a href="#about">About</a>
 <a href="#contact">Contact</a>
 </nav>
 </header>
 
 <main>
+
 <div class="hero" id="home">
 <div class="tag">INDEPENDENT DIGITAL STUDIO</div>
-<h1>Ideas into <span>Innovation.</span></h1>
-<p>Welcome to CHAT-SRIA. We explore digital technology, develop useful software and turn creative ideas into practical digital experiences.</p>
-<a href="#services" class="btn">Explore our services →</a>
+<h1>Ideas into<br><span>Innovation.</span></h1>
+<p>
+Welcome to CHAT-SRIA. We create digital experiences,
+software and technology-driven solutions designed
+to make everyday tasks easier.
+</p>
+<a href="#services" class="btn">Explore services →</a>
+<a href="#contact" class="btn secondary">Contact us</a>
 </div>
 
 <section id="services">
-<h2>What We Do</h2>
-<p class="sub">Digital solutions built around useful ideas.</p>
+<h2>Our Services</h2>
+<p class="subtitle">Digital solutions. Creative thinking. Practical results.</p>
+
 <div class="cards">
 <div class="card">
-<h3>💻 Website Development</h3>
-<p>Modern websites designed to help projects and businesses establish an online presence.</p>
+<div class="icon">💻</div>
+<h3>Website Development</h3>
+<p>Modern, responsive websites for individuals,
+projects and businesses.</p>
 </div>
+
 <div class="card">
-<h3>⚙️ Digital Software</h3>
-<p>Useful digital tools, dashboards and applications designed to solve everyday problems.</p>
+<div class="icon">⚙️</div>
+<h3>Digital Software</h3>
+<p>Custom web applications, dashboards and
+useful digital management tools.</p>
 </div>
+
 <div class="card">
-<h3>🤖 AI Projects</h3>
-<p>Exploring artificial intelligence and practical ways to use it in digital products.</p>
+<div class="icon">🤖</div>
+<h3>AI Solutions</h3>
+<p>Exploring practical AI tools and intelligent
+digital experiences.</p>
+</div>
+
+<div class="card">
+<div class="icon">📱</div>
+<h3>Web Applications</h3>
+<p>Interactive browser-based applications
+designed for different needs.</p>
+</div>
+</div>
+</section>
+
+<section id="products">
+<h2>Digital Products</h2>
+<p class="subtitle">Our digital product catalogue.</p>
+
+<div class="cards">
+<div class="card">
+<div class="icon">📊</div>
+<h3>Business Dashboard</h3>
+<p>A digital workspace concept for organising
+tasks, projects and business information.</p>
+<div class="price">Coming soon</div>
+</div>
+
+<div class="card">
+<div class="icon">🗂️</div>
+<h3>Project Manager</h3>
+<p>A browser-based project organisation tool
+for keeping track of progress.</p>
+<div class="price">Coming soon</div>
+</div>
+
+<div class="card">
+<div class="icon">✨</div>
+<h3>Digital Toolkit</h3>
+<p>A collection of useful online tools and
+productivity utilities.</p>
+<div class="price">Coming soon</div>
+</div>
+</div>
+</section>
+
+<section class="portfolio" id="portfolio">
+<h2>Our Portfolio</h2>
+<p class="subtitle">Digital projects and development work.</p>
+
+<div class="cards">
+<div class="card">
+<div class="icon">🌐</div>
+<h3>CHAT-SRIA Website</h3>
+<p>Our own company website, built and
+published using GitHub Pages.</p>
+</div>
+
+<div class="card">
+<div class="icon">🏢</div>
+<h3>Business Management Concept</h3>
+<p>A business management interface concept
+exploring digital organisation.</p>
+</div>
+
+<div class="card">
+<div class="icon">🤖</div>
+<h3>AI Experiments</h3>
+<p>Exploring local AI models and interactive
+software projects.</p>
 </div>
 </div>
 </section>
 
 <section class="about" id="about">
 <h2>About CHAT-SRIA</h2>
-<p>CHAT-SRIA is an independent digital venture focused on creativity, technology and software development. Our goal is to turn ideas into useful digital products and continuously improve what we create.</p>
+<p>
+CHAT-SRIA is an independent digital venture
+focused on software, websites and technology.
+We believe useful ideas can become useful
+digital experiences through creativity,
+experimentation and continuous improvement.
+<br><br>
+Our focus is entirely digital: no physical
+products, stock or shipping.
+</p>
 </section>
 
-<section class="contact" id="contact">
-<h2>Get in Touch</h2>
-<p>Interested in working with CHAT-SRIA?</p>
-<p>Our contact details will be published here soon.</p>
+<section id="contact" class="contact">
+<h2>Let's Connect</h2>
+<p>Have a digital project or enquiry?</p>
+
+<div class="contact-box">
+<h3>Contact CHAT-SRIA</h3>
+<p style="margin:15px 0">Business enquiries:</p>
+<a class="email" href="mailto:snlybuisness@gmail.com">
+snlybuisness@gmail.com
+</a>
+<br>
+<a class="btn" href="mailto:snlybuisness@gmail.com?subject=CHAT-SRIA%20Enquiry">
+Send an email →
+</a>
+</div>
 </section>
+
 </main>
 
 <footer>
-© 2026 CHAT-SRIA. All rights reserved.
+<p>© 2026 CHAT-SRIA. All rights reserved.</p>
+<p>Independent Digital Studio</p>
+<p><a href="mailto:snlybuisness@gmail.com">Contact us</a></p>
 </footer>
+
 </body>
 </html>
