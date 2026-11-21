@@ -2,45 +2,61 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>CHAT-SRIA | Website Studio</title>
 <style>
-*{box-sizing:border-box;margin:0;padding:0}
-body{font-family:Arial,sans-serif;background:#fff;color:#111;line-height:1.6}
-header{padding:20px 7%;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #eee;position:sticky;top:0;background:#fff;z-index:5}
-.logo{font-size:24px;font-weight:900;letter-spacing:-1px}
-nav a{color:#111;text-decoration:none;margin-left:20px;font-size:14px}
-.hero{padding:100px 8%;background:#080808;color:#fff;text-align:center}
-.hero h1{font-size:clamp(42px,8vw,76px);line-height:1.05;letter-spacing:-3px}
-.hero p{color:#ccc;max-width:600px;margin:22px auto}
-.btn{display:inline-block;padding:14px 24px;background:#fff;color:#111;text-decoration:none;font-weight:bold;border:1px solid #fff;margin:8px;cursor:pointer}
-.btn.dark{background:#111;color:#fff;border-color:#111}
-section{padding:75px 8%}
-.heading{text-align:center;margin-bottom:40px}
-.heading h2{font-size:36px;letter-spacing:-1px}
-.heading p{color:#666}
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,sans-serif;color:#111;background:#fff}
+header{height:68px;padding:0 5%;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #ddd;position:sticky;top:0;background:white;z-index:10}
+.logo{font-size:23px;font-weight:900;letter-spacing:-1px}
+nav{display:flex;gap:20px;align-items:center}
+nav a{color:#111;text-decoration:none;font-size:14px}
+button,.btn{border:0;background:#111;color:white;padding:12px 19px;cursor:pointer;font-weight:bold;text-decoration:none;border-radius:4px}
+button:hover,.btn:hover{opacity:.8}
+.hero{background:#080808;color:white;padding:90px 8%;text-align:center}
+.hero h1{font-size:clamp(40px,7vw,70px);margin:10px}
+.hero p{color:#ccc;max-width:600px;margin:20px auto}
+section{padding:65px 7%}
+.heading{text-align:center;margin-bottom:35px}
+.heading h2{font-size:34px;margin-bottom:8px}
+.heading p{color:#777}
 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
-.card{border:1px solid #ddd;padding:27px;border-radius:8px;background:#fff}
-.card h3{font-size:21px;margin-bottom:10px}
-.card p{color:#666;font-size:14px}
-.price{font-size:38px;font-weight:900;margin:15px 0}
-.price small{font-size:14px;font-weight:normal;color:#666}
-.featured{background:#080808;color:#fff}
-.featured p,.featured li{color:#ccc}
-ul{padding-left:20px;margin:15px 0}
-li{margin:7px 0}
-.tag{font-size:11px;border:1px solid currentColor;padding:5px 9px;display:inline-block;margin-bottom:12px}
-.service{min-height:150px}
-.contact{background:#080808;color:#fff;text-align:center}
-.contact p{color:#ccc;margin:12px auto 20px}
-footer{padding:25px;text-align:center;color:#777;font-size:13px}
-a{transition:.2s}
-a:hover{opacity:.7}
-@media(max-width:650px){
-header{flex-direction:column;gap:12px}
-nav a{margin:0 7px;font-size:12px}
-.hero{padding:75px 6%}
-section{padding:55px 6%}
+.card{border:1px solid #ddd;border-radius:7px;padding:25px}
+.card h3{margin-top:0}
+.price{font-size:35px;font-weight:900;margin:15px 0}
+.card p,.muted{color:#777}
+.builder{background:#f5f5f5}
+.builder-layout{display:grid;grid-template-columns:minmax(260px, .8fr) minmax(300px,1.2fr);gap:25px;align-items:start}
+.panel{background:white;border:1px solid #ddd;border-radius:8px;padding:22px}
+label{display:block;font-size:13px;font-weight:bold;margin:15px 0 6px}
+input,textarea,select{width:100%;padding:12px;border:1px solid #ccc;border-radius:4px;font:inherit;background:white}
+textarea{min-height:85px;resize:vertical}
+input[type=color]{height:45px;padding:4px}
+.preview{background:white;border:1px solid #bbb;min-height:470px;border-radius:8px;overflow:hidden}
+.preview-top{background:#eee;padding:10px;text-align:center;font-size:12px;color:#555}
+.site-preview{min-height:430px}
+.site-nav{padding:18px 7%;display:flex;justify-content:space-between;gap:10px;font-weight:bold;border-bottom:1px solid #ddd}
+.site-hero{padding:65px 8%;text-align:center}
+.site-hero h1{font-size:40px;line-height:1.1}
+.site-hero p{max-width:500px;margin:15px auto}
+.site-section{padding:30px 8%;border-top:1px solid #eee}
+.site-footer{padding:20px;text-align:center;background:#111;color:white}
+.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
+.secondary{background:white;color:#111;border:1px solid #111}
+.dark{background:#111;color:white}
+.price-card-dark{background:#111;color:white}
+.price-card-dark p{color:#ccc}
+.notice{background:#f2f2f2;padding:16px;border-radius:5px;margin-top:15px;font-size:13px}
+.modal{display:none;position:fixed;inset:0;background:#0009;z-index:30;align-items:center;justify-content:center;padding:18px}
+.modal-box{background:white;border-radius:9px;padding:28px;max-width:440px;width:100%}
+.modal-box h2{margin-top:0}
+.close{float:right;background:#eee;color:#111;padding:7px 11px}
+footer{text-align:center;padding:25px;color:#777;border-top:1px solid #ddd}
+@media(max-width:760px){
+ header{height:auto;padding:15px 5%;align-items:flex-start;gap:12px;flex-direction:column}
+ nav{gap:13px;flex-wrap:wrap}
+ .builder-layout{grid-template-columns:1fr}
+ section{padding:48px 5%}
 }
 </style>
 </head>
@@ -52,130 +68,294 @@ section{padding:55px 6%}
 <a href="#home">Home</a>
 <a href="#services">Services</a>
 <a href="#pricing">Pricing</a>
-<a href="#about">About</a>
+<a href="#builder">Website Builder</a>
 <a href="#contact">Contact</a>
 </nav>
 </header>
 
 <div class="hero" id="home">
 <p>WELCOME TO CHAT-SRIA</p>
-<h1>Websites.<br>Made your way.</h1>
-<p>Professional websites, designed around your ideas. From a simple personal website to a complete business website.</p>
-<a class="btn" href="#pricing">View pricing</a>
-<a class="btn" href="#contact">Get in touch</a>
+<h1>Build your website.<br>Your way.</h1>
+<p>Create a design, edit it and preview your website before choosing to publish.</p>
+<a class="btn" href="#builder">Start building</a>
+<a class="btn secondary" href="#pricing">View plans</a>
 </div>
 
 <section id="services">
 <div class="heading">
-<h2>What we do</h2>
-<p>Everything you need to get your website online.</p>
+<h2>Our services</h2>
+<p>Everything you need to get started online.</p>
 </div>
 <div class="grid">
-<div class="card service">
-<h3>Website creation</h3>
-<p>Get a new website designed around your business or personal project.</p>
+<div class="card"><h3>Website creation</h3><p>Build a new website around your idea.</p></div>
+<div class="card"><h3>Website redesign</h3><p>Give your existing website a fresh look.</p></div>
+<div class="card"><h3>Business websites</h3><p>Showcase your business and services.</p></div>
+<div class="card"><h3>Personal websites</h3><p>Create your own portfolio or personal page.</p></div>
 </div>
-<div class="card service">
-<h3>Website redesign</h3>
-<p>Give your existing website a fresh, modern look.</p>
+</section>
+
+<section class="builder" id="builder">
+<div class="heading">
+<h2>Website Builder Studio</h2>
+<p>Make changes on the left. See your website update on the right.</p>
 </div>
-<div class="card service">
-<h3>Business websites</h3>
-<p>Showcase your services, information and contact details online.</p>
+
+<div class="builder-layout">
+<div class="panel">
+<h3>Your website settings</h3>
+
+<label for="siteName">Website name</label>
+<input id="siteName" value="My Website">
+
+<label for="siteHeadline">Main heading</label>
+<input id="siteHeadline" value="Welcome to my website">
+
+<label for="siteTagline">Short introduction</label>
+<textarea id="siteTagline">A website made just for you. Tell visitors what you do and what makes your website special.</textarea>
+
+<label for="siteAbout">About section</label>
+<textarea id="siteAbout">Write something about yourself, your project or your business here.</textarea>
+
+<label for="siteServices">Services or features</label>
+<textarea id="siteServices">Service one, Service two, Service three</textarea>
+
+<label for="siteEmail">Contact email</label>
+<input id="siteEmail" type="email" value="hello@example.com">
+
+<label for="siteColor">Website background colour</label>
+<input id="siteColor" type="color" value="#ffffff">
+
+<label for="siteText">Text colour</label>
+<input id="siteText" type="color" value="#111111">
+
+<label for="siteAccent">Accent colour</label>
+<input id="siteAccent" type="color" value="#111111">
+
+<div class="actions">
+<button onclick="saveProject()">Save project</button>
+<button class="secondary" onclick="loadProject()">Load saved project</button>
+<button class="secondary" onclick="downloadSite()">Download website</button>
 </div>
-<div class="card service">
-<h3>Personal websites</h3>
-<p>Create a portfolio or a website to share your work and ideas.</p>
+
+<div class="notice" id="saveStatus">Your project is stored in this browser on this device.</div>
+</div>
+
+<div>
+<div class="preview">
+<div class="preview-top">LIVE WEBSITE PREVIEW</div>
+<div class="site-preview" id="preview"></div>
+</div>
+<div class="actions">
+<button onclick="showPublish()">Publish website</button>
+<button class="secondary" onclick="window.print()">Print preview</button>
+</div>
+<p class="muted" style="font-size:12px">Preview changes are not published automatically.</p>
 </div>
 </div>
 </section>
 
-<section id="pricing" style="background:#f6f6f6">
+<section id="pricing">
 <div class="heading">
-<h2>Simple pricing.</h2>
-<p>Choose the plan that works for you.</p>
+<h2>Choose your plan</h2>
+<p>Simple pricing with one-off and recurring options.</p>
 </div>
 <div class="grid">
-
 <div class="card">
-<span class="tag">MONTHLY</span>
 <h3>Monthly Hosting</h3>
-<div class="price">£5<small>/ month</small></div>
-<ul>
-<li>Website hosting</li>
-<li>Website stays published while subscribed</li>
-<li>Monthly renewal</li>
-</ul>
-<a class="btn dark" href="#contact">Enquire</a>
+<div class="price">£5<small>/month</small></div>
+<p>Hosting while your subscription is active.</p>
 </div>
-
 <div class="card">
-<span class="tag">YEARLY</span>
 <h3>Yearly Hosting</h3>
-<div class="price">£40<small>/ year</small></div>
-<ul>
-<li>Website hosting</li>
-<li>Website stays published while renewed</li>
-<li>Yearly renewal</li>
-</ul>
-<a class="btn dark" href="#contact">Enquire</a>
+<div class="price">£40<small>/year</small></div>
+<p>Hosting while your yearly plan is renewed.</p>
 </div>
-
 <div class="card">
-<span class="tag">ONE-TIME PAYMENT</span>
 <h3>Lifetime Publishing</h3>
 <div class="price">£70</div>
-<ul>
-<li>One payment</li>
-<li>Website publishing</li>
-<li>Lifetime hosting included</li>
-</ul>
-<a class="btn dark" href="#contact">Enquire</a>
+<p>One-off payment for publishing and lifetime hosting.</p>
 </div>
-
-<div class="card featured">
-<span class="tag">COMPLETE PACKAGE</span>
+<div class="card price-card-dark">
 <h3>Complete Bundle</h3>
 <div class="price">£90</div>
-<ul>
-<li>Website creation</li>
-<li>Custom design</li>
-<li>Multiple pages</li>
-<li>Mobile-friendly design</li>
-<li>Website publishing</li>
-<li>Lifetime hosting included</li>
-<li>One payment — no renewal</li>
-</ul>
-<a class="btn" href="#contact">Enquire now</a>
+<p>Website creation, custom design, pages, publishing and lifetime hosting.</p>
 </div>
-
 </div>
-<p style="text-align:center;color:#666;font-size:12px;margin-top:25px">
-Lifetime hosting is subject to the hosting service remaining available and the agreed service terms. Any limits or exceptions will be explained before purchase.
-</p>
+<p class="muted" style="text-align:center;font-size:12px;margin-top:20px">Lifetime hosting is subject to the agreed hosting service terms and continued availability of the hosting provider.</p>
 </section>
 
-<section id="about">
+<section id="contact">
 <div class="heading">
-<h2>About CHAT-SRIA</h2>
-<p>Our goal is to make getting a website simple.</p>
-</div>
-<div style="max-width:700px;margin:auto;text-align:center">
-<p>CHAT-SRIA is a website studio focused on creating clean, modern and useful websites. We want customers to be able to bring their ideas to life with a website that suits them.</p>
+<h2>Contact CHAT-SRIA</h2>
+<p>Have an idea? Get in touch.</p>
+<a class="btn" href="mailto:snlybuisness@gmail.com?subject=CHAT-SRIA%20Enquiry">Email us</a>
 </div>
 </section>
 
-<section id="contact" class="contact">
-<h2 style="font-size:36px">Have a website idea?</h2>
-<p>Tell us what you want to create. Get in touch with CHAT-SRIA.</p>
-<a class="btn" href="mailto:snlybuisness@gmail.com?subject=CHAT-SRIA%20Website%20Enquiry">Email CHAT-SRIA</a>
-<p style="margin-top:20px">snlybuisness@gmail.com</p>
+<footer>© 2026 CHAT-SRIA. All rights reserved.</footer>
+
+<div class="modal" id="publishModal">
+<div class="modal-box">
+<button class="close" onclick="closePublish()">Close</button>
+<h2>Payment required</h2>
+<p>Your website is ready to publish, but a plan payment must be confirmed first.</p>
+<label for="chosenPlan">Choose your plan</label>
+<select id="chosenPlan">
+<option value="5">Monthly Hosting — £5/month</option>
+<option value="40">Yearly Hosting — £40/year</option>
+<option value="70">Lifetime Publishing — £70</option>
+<option value="90">Complete Bundle — £90</option>
+</select>
+<div class="notice">
+<strong>Publishing is locked.</strong><br>
+This website has not been published. Payment confirmation is required before publishing can be enabled.
+</div>
+<div class="actions">
+<a class="btn" id="enquiryLink" href="mailto:snlybuisness@gmail.com?subject=CHAT-SRIA%20Payment%20Enquiry">Enquire about payment</a>
+<button class="secondary" onclick="closePublish()">Back to builder</button>
+</div>
+</div>
+</div>
+
+<script>
+const fields = [
+"siteName","siteHeadline","siteTagline","siteAbout",
+"siteServices","siteEmail","siteColor","siteText","siteAccent"
+];
+
+function escapeHTML(value){
+ return String(value).replace(/[&<>"']/g, c => ({
+  "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"
+ })[c]);
+}
+
+function getData(){
+ const data={};
+ fields.forEach(id=>data[id]=document.getElementById(id).value);
+ return data;
+}
+
+function renderPreview(){
+ const d=getData();
+ const services=d.siteServices.split(",").map(x=>x.trim()).filter(Boolean);
+ const email=escapeHTML(d.siteEmail);
+ const safeName=escapeHTML(d.siteName);
+ const safeHeadline=escapeHTML(d.siteHeadline);
+ const safeTagline=escapeHTML(d.siteTagline);
+ const safeAbout=escapeHTML(d.siteAbout);
+
+ document.getElementById("preview").innerHTML=`
+ <div style="background:${d.siteColor};color:${d.siteText};min-height:430px">
+  <div class="site-nav">
+   <span>${safeName}</span>
+   <span>Home　 About　 Services　 Contact</span>
+  </div>
+  <div class="site-hero">
+   <h1>${safeHeadline}</h1>
+   <p>${safeTagline}</p>
+   <a href="mailto:${email}" style="display:inline-block;padding:11px 20px;background:${d.siteAccent};color:white;text-decoration:none;border-radius:3px">Contact us</a>
+  </div>
+  <div class="site-section">
+   <h2>About</h2>
+   <p>${safeAbout}</p>
+  </div>
+  <div class="site-section">
+   <h2>Our services</h2>
+   <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:10px;margin-top:15px">
+   ${services.map(s=>`<div style="border:1px solid #aaa;padding:13px;border-radius:4px">${escapeHTML(s)}</div>`).join("")}
+   </div>
+  </div>
+  <div class="site-section">
+   <h2>Contact</h2>
+   <p>${email}</p>
+  </div>
+  <div class="site-footer">Made with CHAT-SRIA</div>
+ </div>`;
+}
+
+fields.forEach(id=>{
+ document.getElementById(id).addEventListener("input",renderPreview);
+});
+
+function saveProject(){
+ try{
+  localStorage.setItem("chatsria_project",JSON.stringify(getData()));
+  document.getElementById("saveStatus").textContent="Project saved on this device!";
+ }catch(e){
+  document.getElementById("saveStatus").textContent="Could not save this project in this browser.";
+ }
+}
+
+function loadProject(){
+ try{
+  const saved=localStorage.getItem("chatsria_project");
+  if(!saved){
+   document.getElementById("saveStatus").textContent="No saved project found on this device.";
+   return;
+  }
+  const data=JSON.parse(saved);
+  fields.forEach(id=>{
+   if(data[id]!==undefined) document.getElementById(id).value=data[id];
+  });
+  renderPreview();
+  document.getElementById("saveStatus").textContent="Saved project loaded!";
+ }catch(e){
+  document.getElementById("saveStatus").textContent="Could not load the saved project.";
+ }
+}
+
+function buildHTML(){
+ const d=getData();
+ const services=d.siteServices.split(",").map(s=>s.trim()).filter(Boolean);
+ return `<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>${escapeHTML(d.siteName)}</title>
+<style>
+body{margin:0;font-family:Arial;background:${d.siteColor};color:${d.siteText}}
+header,section,footer{text-align:center;padding:35px 8%}
+h1{font-size:48px}
+a{background:${d.siteAccent};color:white;padding:12px 20px;text-decoration:none}
+.service{display:inline-block;padding:15px;margin:8px;border:1px solid #aaa}
+</style></head><body>
+<header><b>${escapeHTML(d.siteName)}</b></header>
+<section><h1>${escapeHTML(d.siteHeadline)}</h1><p>${escapeHTML(d.siteTagline)}</p>
+<a href="mailto:${escapeHTML(d.siteEmail)}">Contact</a></section>
+<section><h2>About</h2><p>${escapeHTML(d.siteAbout)}</p></section>
+<section><h2>Services</h2>
+${services.map(s=>`<div class="service">${escapeHTML(s)}</div>`).join("")}
 </section>
+<section><h2>Contact</h2><p>${escapeHTML(d.siteEmail)}</p></section>
+<footer>Made with CHAT-SRIA</footer></body></html>`;
+}
 
-<footer>
-© 2026 CHAT-SRIA. All rights reserved.
-</footer>
+function downloadSite(){
+ const blob=new Blob([buildHTML()],{type:"text/html"});
+ const url=URL.createObjectURL(blob);
+ const a=document.createElement("a");
+ a.href=url;
+ a.download="my-website.html";
+ a.click();
+ URL.revokeObjectURL(url);
+}
 
+function showPublish(){
+ document.getElementById("publishModal").style.display="flex";
+ updateEnquiry();
+}
+function closePublish(){
+ document.getElementById("publishModal").style.display="none";
+}
+function updateEnquiry(){
+ const plan=document.getElementById("chosenPlan");
+ const amount=plan.options[plan.selectedIndex].text;
+ document.getElementById("enquiryLink").href=
+ "mailto:snlybuisness@gmail.com?subject="+
+ encodeURIComponent("CHAT-SRIA payment enquiry")+
+ "&body="+encodeURIComponent("I would like to enquire about: "+amount);
+}
+document.getElementById("chosenPlan").addEventListener("change",updateEnquiry);
+renderPreview();
+</script>
 </body>
 </html>
-
