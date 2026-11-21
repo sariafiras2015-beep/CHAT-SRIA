@@ -4,114 +4,367 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CHAT-SRIA AI</title>
+
+<title>CHAT-SRIA | Digital Website Studio</title>
+<meta name="description" content="CHAT-SRIA creates modern, professional websites for businesses and organisations.">
+
 <style>
-*{box-sizing:border-box}
-body{margin:0;background:#101323;color:#f5f5ff;font-family:Arial,sans-serif}
-header{height:68px;padding:0 6%;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #292d43}
-.logo{font-size:22px;font-weight:bold;color:#b9a4ff}
-header a{color:#ddd;text-decoration:none}
-main{max-width:850px;margin:55px auto;padding:20px}
-.hero{text-align:center;margin-bottom:35px}
-.hero h1{font-size:42px;margin-bottom:10px}
-.hero p{color:#a9aec5}
-.purple{color:#b9a4ff}
-.panel{background:#191e33;border:1px solid #303650;border-radius:18px;padding:20px}
-.stats{display:flex;justify-content:space-between;gap:12px;margin-bottom:18px}
-.stat{background:#242a43;padding:12px;border-radius:12px;flex:1}
-.stat small{display:block;color:#a9aec5;margin-bottom:7px}
-.stat strong{font-size:20px}
-#messages{height:330px;overflow-y:auto;padding:8px}
-.message{padding:12px 15px;border-radius:13px;margin:10px 0;max-width:85%;white-space:pre-wrap;line-height:1.5}
-.user{background:#6650b5;margin-left:auto}
-.ai{background:#292f49}
-.composer{display:flex;gap:9px;margin-top:15px}
-input{min-width:0;flex:1;background:#11162a;border:1px solid #414967;border-radius:12px;padding:15px;color:white;font-size:15px}
-button{border:0;background:#9274e8;color:white;border-radius:12px;padding:0 20px;font-weight:bold;cursor:pointer}
-button:disabled{opacity:.5;cursor:not-allowed}
-.note{font-size:12px;color:#929bb8;text-align:center;margin-top:15px}
-footer{text-align:center;color:#858ca5;padding:30px;font-size:13px}
-@media(max-width:550px){.hero h1{font-size:32px}.composer{flex-direction:column}.composer button{padding:14px}.stats{flex-direction:column}}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #080808;
+  color: #fff;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.6;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 23px 8%;
+  border-bottom: 1px solid #252525;
+  position: sticky;
+  top: 0;
+  background: rgba(8,8,8,0.96);
+  z-index: 10;
+}
+
+.logo {
+  font-size: 23px;
+  font-weight: 900;
+  letter-spacing: 2px;
+}
+
+nav {
+  display: flex;
+  gap: 25px;
+}
+
+nav a {
+  color: #ccc;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+nav a:hover {
+  color: white;
+}
+
+.hero {
+  min-height: 570px;
+  padding: 120px 8%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: radial-gradient(ellipse at 75% 40%, #252525 0%, #080808 60%);
+}
+
+.tag {
+  color: #aaa;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  font-size: 12px;
+  margin-bottom: 22px;
+}
+
+.hero h1 {
+  font-size: clamp(48px, 8vw, 90px);
+  line-height: 1.05;
+  max-width: 850px;
+  letter-spacing: -4px;
+}
+
+.hero h1 span {
+  color: #888;
+}
+
+.hero p {
+  color: #aaa;
+  max-width: 530px;
+  margin-top: 25px;
+  font-size: 17px;
+}
+
+.button {
+  display: inline-block;
+  background: white;
+  color: black;
+  padding: 14px 25px;
+  text-decoration: none;
+  font-weight: bold;
+  margin-top: 30px;
+  width: fit-content;
+  transition: 0.2s;
+}
+
+.button:hover {
+  background: #bbb;
+  transform: translateY(-3px);
+}
+
+section {
+  padding: 90px 8%;
+}
+
+.section-label {
+  color: #888;
+  letter-spacing: 3px;
+  font-size: 12px;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.section-title {
+  font-size: clamp(32px, 5vw, 48px);
+  margin-bottom: 40px;
+  letter-spacing: -1px;
+}
+
+.services, .portfolio {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 18px;
+}
+
+.service, .project {
+  border: 1px solid #292929;
+  padding: 30px;
+  background: #111;
+  transition: 0.25s;
+}
+
+.service:hover, .project:hover {
+  border-color: #888;
+  transform: translateY(-5px);
+}
+
+.number {
+  color: #777;
+  font-size: 13px;
+  margin-bottom: 25px;
+}
+
+.service h3, .project h3 {
+  font-size: 21px;
+  margin-bottom: 12px;
+}
+
+.service p, .project p {
+  color: #999;
+  font-size: 14px;
+}
+
+.about {
+  background: #111;
+  border-top: 1px solid #252525;
+  border-bottom: 1px solid #252525;
+}
+
+.about-content {
+  max-width: 720px;
+}
+
+.about-content p {
+  color: #aaa;
+  font-size: 17px;
+}
+
+.contact {
+  text-align: center;
+}
+
+.contact p {
+  color: #aaa;
+  max-width: 500px;
+  margin: auto;
+}
+
+.contact .button {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+footer {
+  padding: 30px 8%;
+  border-top: 1px solid #252525;
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  flex-wrap: wrap;
+  color: #777;
+  font-size: 13px;
+}
+
+@media(max-width: 650px) {
+  header {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  nav {
+    gap: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .hero {
+    padding-top: 90px;
+    min-height: 500px;
+  }
+
+  section {
+    padding: 65px 7%;
+  }
+}
 </style>
 </head>
+
 <body>
+
 <header>
-  <div class="logo">CHAT-SRIA AI</div>
-  <a href="#chat">Start chatting</a>
+  <div class="logo">CHAT-SRIA.</div>
+
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#services">Services</a>
+    <a href="#work">Our Work</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+  </nav>
 </header>
 
 <main>
-<section class="hero">
-  <h1>Meet <span class="purple">CHAT-SRIA AI.</span></h1>
-  <p>Your ideas deserve intelligent answers.</p>
+
+<section class="hero" id="home">
+  <div class="tag">Independent Digital Website Studio</div>
+
+  <h1>
+    WE BUILD<br>
+    <span>YOUR ONLINE</span><br>
+    PRESENCE.
+  </h1>
+
+  <p>
+    Modern, clean and professional websites
+    designed to help businesses make a
+    great first impression online.
+  </p>
+
+  <a href="#contact" class="button">LET'S TALK ↗</a>
 </section>
 
-<section class="panel" id="chat">
-  <div class="stats">
-    <div class="stat">
-      <small>Free messages today</small>
-      <strong id="remaining">10 / 10</strong>
-    </div>
-    <div class="stat">
-      <small>Membership</small>
-      <strong>Free</strong>
-    </div>
-  </div>
+<section id="services">
+  <div class="section-label">What we do</div>
+  <h2 class="section-title">OUR SERVICES.</h2>
 
-  <div id="messages">
-    <div class="message ai">
-      Hello! I'm CHAT-SRIA AI. What would you like help with today?
-    </div>
-  </div>
+  <div class="services">
 
-  <div class="composer">
-    <input id="prompt" placeholder="Ask CHAT-SRIA AI anything..." maxlength="2000">
-    <button id="send">Send</button>
-  </div>
-  <div class="note" id="status">
-    10 free messages daily. Pro membership is planned.
+    <div class="service">
+      <div class="number">01 / DESIGN</div>
+      <h3>Website Design</h3>
+      <p>Modern website layouts designed around your business and its identity.</p>
+    </div>
+
+    <div class="service">
+      <div class="number">02 / DEVELOPMENT</div>
+      <h3>Website Creation</h3>
+      <p>Responsive websites designed for phones, tablets and computers.</p>
+    </div>
+
+    <div class="service">
+      <div class="number">03 / IMPROVEMENT</div>
+      <h3>Website Redesign</h3>
+      <p>Give an existing website a fresh, modern appearance.</p>
+    </div>
+
+    <div class="service">
+      <div class="number">04 / BUSINESS</div>
+      <h3>Business Websites</h3>
+      <p>Professional online spaces for small businesses and organisations.</p>
+    </div>
+
   </div>
 </section>
 
-<section style="text-align:center;margin-top:40px">
-  <h2>More than just a chatbot.</h2>
-  <p class="purple">Writing · Coding · Ideas · Learning · Productivity</p>
-  <p style="color:#a9aec5">Simple, helpful AI assistance in one place.</p>
+<section id="work">
+  <div class="section-label">Selected projects</div>
+  <h2 class="section-title">OUR WORK.</h2>
+
+  <div class="portfolio">
+
+    <div class="project">
+      <div class="number">PROJECT 01</div>
+      <h3>CHAT-SRIA Studio</h3>
+      <p>Our own studio website and design portfolio.</p>
+      <p style="margin-top:15px;color:#fff;">LIVE PROJECT</p>
+    </div>
+
+    <div class="project">
+      <div class="number">PROJECT 02</div>
+      <h3>Business Concept</h3>
+      <p>A concept website for a modern independent business.</p>
+      <p style="margin-top:15px;color:#888;">DEMO PROJECT</p>
+    </div>
+
+    <div class="project">
+      <div class="number">PROJECT 03</div>
+      <h3>Portfolio Concept</h3>
+      <p>A clean portfolio concept for a creative professional.</p>
+      <p style="margin-top:15px;color:#888;">DEMO PROJECT</p>
+    </div>
+
+  </div>
 </section>
+
+<section class="about" id="about">
+  <div class="about-content">
+    <div class="section-label">Who we are</div>
+    <h2 class="section-title">ABOUT CHAT-SRIA.</h2>
+
+    <p>
+      CHAT-SRIA is an independent digital website studio
+      focused on creating simple, modern and professional
+      websites.
+      <br><br>
+      We believe every business deserves a website
+      that represents it properly.
+      <br><br>
+      Our approach is straightforward: thoughtful design,
+      clear communication and attention to detail.
+    </p>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="section-label">Start a project</div>
+  <h2 class="section-title">HAVE A PROJECT?</h2>
+
+  <p>
+    Tell us what you're looking for.
+    Get in touch to discuss a possible website project.
+  </p>
+
+  <a class="button"
+     href="mailto:snlybuisness@gmail.com?subject=CHAT-SRIA%20Website%20Enquiry">
+     EMAIL CHAT-SRIA ↗
+  </a>
+</section>
+
 </main>
 
-<footer>© 2026 CHAT-SRIA. All rights reserved.</footer>
+<footer>
+  <div>© 2026 CHAT-SRIA. All rights reserved.</div>
+  <div>Independent Digital Website Studio</div>
+</footer>
 
-<script>
-const messages=document.getElementById("messages");
-const input=document.getElementById("prompt");
-const send=document.getElementById("send");
-const remaining=document.getElementById("remaining");
-const status=document.getElementById("status");
-
-function addMessage(text,type){
-  const div=document.createElement("div");
-  div.className="message "+type;
-  div.textContent=text;
-  messages.appendChild(div);
-  messages.scrollTop=messages.scrollHeight;
-}
-
-send.onclick=async()=>{
-  const text=input.value.trim();
-  if(!text)return;
-
-  addMessage(text,"user");
-  input.value="";
-  send.disabled=true;
-
-  addMessage("The AI service is not connected yet. We're setting it up!","ai");
-  send.disabled=false;
-};
-
-input.addEventListener("keydown",e=>{
-  if(e.key==="Enter")send.click();
-});
-</script>
 </body>
 </html>
